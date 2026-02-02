@@ -167,7 +167,7 @@ pytest test_regex_validators.py -v > test_output.txt
 
 RUN SPECIFIC TEST CATEGORY:
 pytest test_regex_validators.py -v -k "military_time"
-pytest test_regex_validators.py -v -k "ec_" (runs only extra credit tests)
+pytest test_regex_validators.py -v -k "test_ec"(runs only extra credit tests)
 
 ----- FILES INCLUDED -----
 - regex_validators.py         : All 12 regex validation functions + extra credit
@@ -175,32 +175,4 @@ pytest test_regex_validators.py -v -k "ec_" (runs only extra credit tests)
 - test_output.txt             : Captured test results showing all 216 tests passing
 - README.txt                  : This file (documentation and implementation notes)
 
------ COLLABORATION -----
-- Unit tests were developed with assistance from AI tools (explicitly allowed per assignment)
-- Test cases were designed to cover edge cases and validation rules
-- Did not collaborate with team members on this individual assignment
-- All regex implementations and validation logic are original work
 
------ COMPLETION STATUS -----
-
-- All 12 regex validators implemented and working
-- All 192 base unit tests passing
-- All 24 extra credit tests passing (216 total tests)
-- Code is well-documented with clear docstrings
-- Test names clearly describe what they test
-- Output captured showing all tests passing
-- 6 extra credit points earned (SSN rules, area codes, state codes)
-- README documentation complete
-
-Assignment completed on: February 1, 2026
-Total time invested: ~6-8 hours
-Final test count: 216 passing (100% success rate)
-
------ NOTES FOR GRADING -----
-
-- All assignment requirements met
-- Extra credit features fully implemented and tested
-- Code follows Python conventions and is well-organized
-- Each validator is in its own function as required
-- Tests are comprehensive with clear naming
-- Output clearly shows all test names and results
