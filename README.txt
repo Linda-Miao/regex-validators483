@@ -196,11 +196,3 @@ Assignment completed on: February 1, 2026
 Total time invested: ~6-8 hours
 Final test count: 216 passing (100% success rate)
 
------ NOTES FOR GRADING -----
-
-- All assignment requirements met
-- Extra credit features fully implemented and tested
-- Code follows Python conventions and is well-organized
-- Each validator is in its own function as required
-- Tests are comprehensive with clear naming
-- Output clearly shows all test names and results
