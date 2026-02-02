@@ -15,7 +15,7 @@ Testing Framework: pytest
 Total Tests: 216 (192 base + 24 extra credit)
 All tests passed
 
------IMPLEMENTATION DECISIONS & GRAY AREAS-----
+----- IMPLEMENTATION DECISIONS & GRAY AREAS-----
 
 1. SOCIAL SECURITY NUMBER
    - Accepts: 123-45-6789, 123 45 6789, 123456789
@@ -174,5 +174,4 @@ pytest test_regex_validators.py -v -k "test_ec"(runs only extra credit tests)
 - test_regex_validators.py    : 216 unit tests (192 base + 24 extra credit)
 - test_output.txt             : Captured test results showing all 216 tests passing
 - README.txt                  : This file (documentation and implementation notes)
-
 

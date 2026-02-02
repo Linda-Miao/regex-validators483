@@ -72,7 +72,7 @@ def validate_currency(text):
     """
     Validates US currency format: $X,XXX,XXX.XX
     - Must start with $
-    - Commas optional (your choice - document this!)
+    - Commas optional 
     - Must have decimal and cents
     """
     pattern = r'^\$\d{1,3}(,\d{3})*\.\d{2}$'
@@ -106,7 +106,7 @@ def validate_ssn(text):
     
     if not match:
         return False
-    
+
     # EXTRA CREDIT: Validate SSA rules
     area = int(match.group(1))
     group = int(match.group(2))

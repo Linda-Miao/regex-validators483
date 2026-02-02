@@ -114,7 +114,7 @@ def test_invalid_currency_letters():
     assert validate_currency("$abc.de") == False
 
 
-# ==================== URL TESTS ====================
+# --- URL TESTS ---
 def test_valid_url_simple():
     assert validate_url("google.com") == True
 
@@ -173,10 +173,10 @@ def test_valid_ssn_with_spaces():
 def test_valid_ssn_no_separators():
     assert validate_ssn("123456789") == True
 
-def test_valid_ssn_zeros():
+def test_invalid_ssn_zeros():
     assert validate_ssn("000-00-0000") == False
 
-def test_valid_ssn_all_nines():
+def test_invalid_ssn_all_nines():
     assert validate_ssn("999-99-9999") == False
 
 def test_valid_ssn_spaces_no_leading_zeros():
@@ -211,6 +211,12 @@ def test_invalid_ssn_only_dashes():
 
 def test_invalid_ssn_extra_dash():
     assert validate_ssn("123--45-6789") == False
+def test_valid_ssn_dashes_low_range():
+    assert validate_ssn("001-01-0001") == True
+
+def test_valid_ssn_spaces_mid_range():
+    assert validate_ssn("500 50 5000") == True
+
 
 # --- PHONE TESTS ---
 def test_valid_phone_with_parens_dash():
@@ -360,7 +366,7 @@ def test_invalid_roster_name_missing_first():
     assert validate_roster_name("Smith, ") == False
 
 
-# ==================== ADDRESS TESTS ====================
+# --- ADDRESS TESTS ---
 def test_valid_address_street_abbreviated():
     assert validate_address("123 Main St") == True
 
@@ -460,7 +466,7 @@ def test_invalid_city_state_zip_no_space_before_zip():
     assert validate_city_state_zip("Seattle, WA98101") == False
 
 
-# ==================== DATE TESTS ====================
+# --- DATE TESTS ---
 def test_valid_date_leap_year():
     assert validate_date("02-29-2024") == True
 
@@ -510,7 +516,7 @@ def test_invalid_date_year_1900_not_leap():
     assert validate_date("02-29-1900") == False
 
 
-# ==================== PASSWORD TESTS ====================
+# --- PASSWORD TESTS ---
 def test_valid_password_basic():
     assert validate_password("Abc123!Def") == True
 
@@ -523,7 +529,7 @@ def test_valid_password_exactly_three_consecutive():
 def test_valid_password_mixed_case_digits():
     assert validate_password("TeSt1234!@") == True
 
-def test_valid_password_long():
+def test_invalid_password_long():
     assert validate_password("VerySecure1!Pass") == False
 
 def test_valid_password_min_length():
@@ -532,7 +538,7 @@ def test_valid_password_min_length():
 def test_valid_password_multiple_punctuation():
     assert validate_password("P@ssw0rd!#") == True
 
-def test_valid_password_no_consecutive_lowercase():
+def test_invalid_password_no_consecutive_lowercase():
     assert validate_password("A1!B2@C3#D") == False
 
 def test_invalid_password_too_short():
@@ -558,7 +564,11 @@ def test_invalid_password_all_lowercase():
 
 def test_invalid_password_only_nine_chars():
     assert validate_password("Pass123!") == False
+def test_valid_password_alternating():
+    assert validate_password("Ab1!Cd2@Ef3") == True
 
+def test_valid_password_max_three_lower():
+    assert validate_password("Abc1!Def2@G") == True
 # --- ION WORDS TESTS ---
 def test_valid_ion_word_ion():
     assert validate_ion_words("ion") == True
