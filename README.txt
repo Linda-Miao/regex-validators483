@@ -167,7 +167,7 @@ pytest test_regex_validators.py -v > test_output.txt
 
 RUN SPECIFIC TEST CATEGORY:
 pytest test_regex_validators.py -v -k "military_time"
-pytest test_regex_validators.py -v -k "ec_" (runs only extra credit tests)
+pytest test_regex_validators.py -v -k "test_ec"(runs only extra credit tests)
 
 ----- FILES INCLUDED -----
 - regex_validators.py         : All 12 regex validation functions + extra credit
